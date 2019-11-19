@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+    <title>GiphyApp</title>
+    <link href="./src/bs.css" rel="stylesheet">
+    <style>
+        .overlay {
+            top: 5px;
+            bottom: 5px;
+            right: 5px;
+            left: 5px;
+            background: #000000cc;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body class="container-fluid">
 
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
-  </body>
+<div class="overlay position-fixed d-none justify-content-center align-items-center p-3">
+    <div class="text-center">
+        <img src="" class="w-100" id="overlayImage"><br>
+        <button class="mt-2 btn btn-light closeOverlay">CLOSE</button>
+    </div>
+</div>
+
+<div class="form-group mt-2">
+    <input class="search_func form-control text-center">
+</div>
+
+<div id="content" class="row"></div>
+
+
+<script src="./src/jquery.js"></script>
+<script src="./renderer.js"></script>
+</body>
 </html>
